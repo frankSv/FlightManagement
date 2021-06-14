@@ -8,9 +8,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AircraftDescription {
-    int id;
-    String model;
-    int capacity;
-    int gasRange;
+    private int id;
+    private String model;
+    private int capacity;
+    private int gasRange;
 
 }

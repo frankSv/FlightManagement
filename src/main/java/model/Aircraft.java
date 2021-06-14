@@ -8,6 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Aircraft {
-    int id;
-    AircraftDescription aircraftDescription;
+    private int id;
+    private AircraftDescription aircraftDescription;
 }

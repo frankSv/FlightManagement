@@ -8,6 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Airline {
-    int id;
-    String name;
+    private int id;
+    private String name;
 }

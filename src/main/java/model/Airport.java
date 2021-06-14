@@ -10,8 +10,8 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Airport {
-    int id;
-    String name;
-    ArrayList<Aircraft> types = new ArrayList<>();
+    private int id;
+    private String name;
+    private ArrayList<Aircraft> types = new ArrayList<>();
 
 }

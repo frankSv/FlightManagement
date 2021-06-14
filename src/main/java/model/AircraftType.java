@@ -8,9 +8,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AircraftType {
-    int id;
-    int number;
-    Airline airline;
-    Aircraft aircraft;
+    private int id;
+    private int number;
+    private Airline airline;
+    private Aircraft aircraft;
 
 }
