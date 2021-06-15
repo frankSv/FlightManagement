@@ -9,5 +9,4 @@ import lombok.*;
 @NoArgsConstructor
 public class Aircraft {
     private int id;
-    private AircraftDescription aircraftDescription;
 }
