@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class Airport {
     private int id;
     private String name;
-    private ArrayList<Aircraft> types = new ArrayList<>();
+    private City city;
+    private ArrayList<AircraftType> types = new ArrayList<>();
 
 }

@@ -10,8 +10,11 @@ import lombok.*;
 public class Flight {
     private int id;
     private int number;
+    private String status;
+    private DateFlight departureDate;
+    private DateFlight arriveDate;
     private Aircraft aircraft;
     private Airline airline;
-    private Airport origin;
-    private Airport destination;
+    private Airport departure;
+    private Airport arrival;
 }

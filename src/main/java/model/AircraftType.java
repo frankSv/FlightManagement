@@ -12,5 +12,4 @@ public class AircraftType {
     private String model;
     private int capacity;
     private int gasRange;
-
 }

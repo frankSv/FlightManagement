@@ -1,14 +1,16 @@
 package model;
 
+
 import lombok.*;
+
+import java.util.Date;
 
 @Data
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class City {
-    private int id;
-    private String name;
-    private Country country;
+public class DateFlight {
+    int id;
+    Date date;
 }
