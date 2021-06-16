@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateCapture {
+
     @SneakyThrows
     public Date dateCapturer(String strData){
         SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy");

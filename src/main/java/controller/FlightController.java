@@ -12,6 +12,7 @@ import view.AirportView;
 import view.FlightView;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 
@@ -22,17 +23,19 @@ import java.util.Scanner;
 @NoArgsConstructor
 public class FlightController {
     private Flight flight;
-    private FlightView flightView;
+    private FlightView flightView = new FlightView();
 
     public Flight createFlight(int number){
-        return new Flight();
+        Flight flight = new Flight();
+        flight.setNumber(number);
+        return flight;
     }
 
 
     public Flight createFlightManually(ArrayList<Aircraft> aircrafts, ArrayList<Airport> airports, ArrayList<Airline> airlines){
-        Flight flight = null;
+        Flight flight = new Flight();
         int selection;
-        String inputDate;
+        String strDate = "";
         DateCapture dateCapture = new DateCapture();
         AircraftView aircraftView = new AircraftView();
         AirportView airportView = new AirportView();
@@ -43,6 +46,12 @@ public class FlightController {
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Type the Flight number");
+        flight.setNumber(sc.nextInt());
+
+        System.out.println("Set Status, type Ontime, Cancelled, Fliying, Delayed or Landed");
+        flight.setStatus(sc.next());
+
         System.out.println("Select an aircraft to add");
         aircraftView.showAircraft(aircrafts);
         selection = sc.nextInt();
@@ -51,33 +60,48 @@ public class FlightController {
         System.out.println("Select an airline to add");
         airlineView.showAirlines(airlines);
         selection = sc.nextInt();
-        flight.setAirline(airlineController.selectedAirline(airlines,selection));
+        flight.setAirline(airlineController.selectedAirline(airlines,selection).getName());
 
         System.out.println("Select departure airport ");
         airportView.showAirports(airports);
         selection = sc.nextInt();
-        flight.setDeparture(airportController.selectedAirport(airports,selection));
+        flight.setDeparture(airportController.selectedAirport(airports,selection).getName());
 
         System.out.println("Select arrival airport");
         airportView.showAirports(airports);
         selection = sc.nextInt();
-        flight.setArrival(airportController.selectedAirport(airports,selection));
+        flight.setArrival(airportController.selectedAirport(airports,selection).getName());
 
         System.out.println("Type departure date (dd/mm/yyyy)");
-        inputDate = sc.nextLine();
-        flight.setDepartureDate(dateCapture.dateCapturer(inputDate));
+        strDate = sc.next();
+        flight.setDepartureDate(dateCapture.dateCapturer(strDate));
 
         System.out.println("Type arrival date (dd/mm/yyyy)");
-        inputDate = sc.nextLine();
-        flight.setArriveDate(dateCapture.dateCapturer(inputDate));
+        strDate = sc.next();
+        flight.setArriveDate(dateCapture.dateCapturer(strDate));
 
         System.out.println("Type departure time (HH:mm)");
-        inputDate = sc.nextLine();
-        flight.setDepartureTime(dateCapture.timeCapturer(inputDate));
+        strDate = sc.next();
+        flight.setDepartureTime(dateCapture.timeCapturer(strDate));
 
         System.out.println("Type arrival time (HH:mm)");
-        inputDate = sc.nextLine();
-        flight.setArriveTime(dateCapture.timeCapturer(inputDate));
+        strDate = sc.next();
+        flight.setArriveTime(dateCapture.timeCapturer(strDate));
+
+        return flight;
+    }
+
+    public Flight findFlightByNumber(int number, ArrayList<Flight> flights){
+        Flight myFlight = new Flight();
+        for(Flight flight:flights){
+            if(flight.getNumber()==number){
+                myFlight = flight;
+            }
+        }
+        return myFlight;
+    }
+
+    public Flight updateFlight(int number, ArrayList<Flight> flights){
 
         return flight;
     }
@@ -91,18 +115,17 @@ public class FlightController {
         return incidentDescription;
     }
 
-    public void flightMenu(int option){
-        do{
-            System.out.println("--------Select an Option------------");
-            System.out.println("1 List Flights");
-            System.out.println("2 Add Flight");
-            System.out.println("3 Exit");
-        }while (option != 3);
+    public void showFlightView(Flight flight){
+        flightView.showFlight(flight);
     }
 
-    public ArrayList<Flight> addFlight(Flight flight){
-        ArrayList<Flight>flights = new ArrayList<>();
-        flights.add(flight);
-        return flights;
+    public void showFlightList(ArrayList<Flight> flights){
+        flightView.showFlights(flights);
+    }
+
+    public ArrayList<Flight> addFlight(ArrayList<Flight> flights, Flight flight){
+        ArrayList<Flight>flightList = flights;
+        flightList.add(flight);
+        return flightList;
     }
 }

@@ -17,7 +17,7 @@ public class Flight {
     private Date arriveDate;
     private Date arriveTime;
     private Aircraft aircraft;
-    private Airline airline;
-    private Airport departure;
-    private Airport arrival;
+    private String airline;
+    private String departure;
+    private String arrival;
 }
