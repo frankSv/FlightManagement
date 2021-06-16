@@ -65,19 +65,19 @@ public class FlightController {
 
         System.out.println("Type departure date (dd/mm/yyyy)");
         inputDate = sc.nextLine();
-        flight.setDepartureDate(dateCapture.dateTimeCapturer(inputDate));
+        flight.setDepartureDate(dateCapture.dateCapturer(inputDate));
 
         System.out.println("Type arrival date (dd/mm/yyyy)");
         inputDate = sc.nextLine();
-        flight.setArriveDate(dateCapture.dateTimeCapturer(inputDate));
+        flight.setArriveDate(dateCapture.dateCapturer(inputDate));
 
         System.out.println("Type departure time (HH:mm)");
         inputDate = sc.nextLine();
-        flight.setDepartureTime(dateCapture.dateTimeCapturer(inputDate));
+        flight.setDepartureTime(dateCapture.timeCapturer(inputDate));
 
         System.out.println("Type arrival time (HH:mm)");
         inputDate = sc.nextLine();
-        flight.setArriveTime(dateCapture.dateTimeCapturer(inputDate));
+        flight.setArriveTime(dateCapture.timeCapturer(inputDate));
 
         return flight;
     }

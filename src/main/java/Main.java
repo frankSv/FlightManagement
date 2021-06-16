@@ -2,6 +2,7 @@ import controller.AirportController;
 import controller.FlightController;
 import model.*;
 import utils.BasicData;
+import utils.ReportUtil;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -70,6 +71,9 @@ public class Main {
 
         flights.add(flight1);
         flights.add(flight2);
+
+        ReportUtil reportUtil = new ReportUtil();
+        reportUtil.creatWorkbook();
 
 
     }

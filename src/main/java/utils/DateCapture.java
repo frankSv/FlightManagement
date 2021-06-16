@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class DateCapture {
     @SneakyThrows
-    public Date dateTimeCapturer(String strData){
+    public Date dateCapturer(String strData){
         SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy");
         Date date = format.parse(strData);
         return date;

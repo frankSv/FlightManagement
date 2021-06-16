@@ -1,3 +1,10 @@
-model/City.class
+view/AirportView.class
+utils/DateCapture.class
+view/AircraftView.class
 model/Aircraft.class
+model/City.class
+controller/AircraftController.class
+controller/AirlineController.class
 model/Flight.class
+utils/ReeportUtil.class
+view/AirlineView.class
