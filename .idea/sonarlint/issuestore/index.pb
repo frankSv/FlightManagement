@@ -9,12 +9,8 @@ S
 #src/main/java/model/TimeFlight.java,7/c/7cbb7ad3a5a13557e15ebfdf33a23c9cc45c03ef
 P
  src/main/java/model/Airport.java,b/b/bb3822fd832c2318426455cf18f4cbb114a31cd5
-Q
-!src/main/java/model/Aircraft.java,3/4/34eb9c9801e2a2019961b0a19ce171501bf95028
 P
  src/main/java/model/Airline.java,3/c/3ce4eb4a5904a027f71a56f3d552fb4752adacd4
-`
-0src/main/java/controller/AircraftController.java,c/0/c021a0316a1ccc3334c6733fcc3372b227296891
 _
 /src/main/java/controller/AirlineController.java,a/8/a8398c93fde65963a37d04546db61b72546cc4f3
 S

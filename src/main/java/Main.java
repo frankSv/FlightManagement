@@ -2,6 +2,7 @@ import controller.AirportController;
 import controller.FlightController;
 import model.*;
 import utils.BasicData;
+import utils.FileImporter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -94,6 +95,7 @@ public class Main {
             System.out.println("--------Select an Option------------");
             System.out.println("1 List Flights");
             System.out.println("2 Add Flight");
+            System.out.println("3 Add from File");
             System.out.println("3 Update Flight");
             System.out.println("4 Generate Airport Report");
             System.out.println("5 Exit");
@@ -108,17 +110,21 @@ public class Main {
                     flightController.addFlight(flights,flight);
                     break;
                 case 3:
+                    System.out.println("Adding fro file");
+                    FileImporter fileImporter = new FileImporter();
+                    flights.addAll(fileImporter.importFromFile(aircrafts));
+                case 4:
                     flightController.showFlightList(flights);
                     System.out.println("Type the Flight number");
                     selectedFlight=sc.nextInt();
                     Flight selected = flightController.findFlightByNumber(selectedFlight, flights);
                     flightController.updateFlight(selected);
                     break;
-                case 4:
+                case 5:
                     airportController.generateAirportReport(flights,airports);
                     System.out.println("Generating Airport Report");
             }
-        }while (flightOption != 5);
+        }while (flightOption != 6);
     }
 
     public static void main(String[] args) {

@@ -32,7 +32,6 @@ public class FlightController {
         return flight;
     }
 
-
     public Flight createFlightManually(ArrayList<Aircraft> aircrafts, ArrayList<Airport> airports, ArrayList<Airline> airlines){
         Flight flight = new Flight();
         int selection;
