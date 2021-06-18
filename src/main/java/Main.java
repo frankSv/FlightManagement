@@ -57,28 +57,35 @@ public class Main {
         flight1.setStatus("Ontime");
         flight1.setAirline(airline1.getName());
         flight1.setAircraft(aircraft1);
-        flight1.setDeparture(airport1.getName());
-        flight1.setArrival(airport2.getName());
+        flight1.setDeparture(airport1.getName());//Departure
+        flight1.setArrival(airport2.getName());//Arrival
         flight1.setDepartureDate(date);
         flight1.setDepartureTime(date);
         flight1.setArriveDate(date);
         flight1.setArriveTime(date);
+        flight1.setCityOri(airport1.getCity().getName());
+        flight1.setCityDest(airport2.getCity().getName());
+        flight1.setCountryOri(airport1.getCity().getCountry().getName());
+        flight1.setCountryDest(airport2.getCity().getCountry().getName());
+
 
         Flight flight2 = flightController.createFlight(25679);
         flight2.setStatus("Ontime");
         flight2.setAirline(airline2.getName());
         flight2.setAircraft(aircraft2);
-        flight2.setDeparture(airport2.getCity().getName());
-        flight2.setArrival(airport1.getCity().getName());
+        flight2.setDeparture(airport2.getName());//departure
+        flight2.setArrival(airport1.getName());//arrival
         flight2.setDepartureDate(date);
         flight2.setDepartureTime(date);
         flight2.setArriveDate(date);
         flight2.setArriveTime(date);
+        flight2.setCityOri(airport2.getCity().getName());
+        flight2.setCityDest(airport1.getCity().getName());
+        flight2.setCountryOri(airport2.getCity().getCountry().getName());
+        flight2.setCountryDest(airport1.getCity().getCountry().getName());
 
         flights.add(flight1);
         flights.add(flight2);
-
-        /////////////////////////////////////////////////////////////////
 
         int flightOption;
         int selectedFlight;
@@ -88,7 +95,8 @@ public class Main {
             System.out.println("1 List Flights");
             System.out.println("2 Add Flight");
             System.out.println("3 Update Flight");
-            System.out.println("4 Exit");
+            System.out.println("4 Generate Airport Report");
+            System.out.println("5 Exit");
             flightOption=sc.nextInt();
             switch (flightOption){
                 case 1:
@@ -106,12 +114,16 @@ public class Main {
                     Flight selected = flightController.findFlightByNumber(selectedFlight, flights);
                     flightController.updateFlight(selected);
                     break;
+                case 4:
+                    airportController.generateAirportReport(flights,airports);
+                    System.out.println("Generating Airport Report");
             }
-        }while (flightOption != 4);
+        }while (flightOption != 5);
     }
 
     public static void main(String[] args) {
         menu();
+
 
     }
 

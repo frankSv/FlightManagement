@@ -20,6 +20,10 @@ public class Flight {
     private String airline;
     private String departure;
     private String arrival;
+    private String cityOri;
+    private String cityDest;
+    private String countryOri;
+    private String countryDest;
     private String incident = "No incident";
     private String cancelReason = " ";
 }

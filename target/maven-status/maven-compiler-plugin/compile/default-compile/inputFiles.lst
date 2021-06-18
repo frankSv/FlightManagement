@@ -1,3 +1,4 @@
+/Users/frank/IdeaProjects/FlightManagement/src/main/java/utils/EmailUtils.java
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/controller/AircraftController.java
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/view/FlightView.java
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/view/AirportView.java
@@ -7,6 +8,7 @@
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/model/Airline.java
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/model/City.java
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/model/TimeFlight.java
+/Users/frank/IdeaProjects/FlightManagement/src/main/java/utils/MailPropperties.java
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/controller/FlightController.java
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/utils/DateCapture.java
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/model/AircraftType.java
@@ -18,4 +20,4 @@
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/utils/BasicData.java
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/model/Country.java
 /Users/frank/IdeaProjects/FlightManagement/src/main/java/model/Flight.java
-/Users/frank/IdeaProjects/FlightManagement/src/main/java/utils/ReeportUtil.java
+/Users/frank/IdeaProjects/FlightManagement/src/main/java/utils/ReportUtil.java

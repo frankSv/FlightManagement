@@ -6,6 +6,7 @@ import model.Airline;
 import model.Airport;
 import model.Flight;
 import utils.DateCapture;
+import utils.ReportUtil;
 import view.AircraftView;
 import view.AirlineView;
 import view.AirportView;
@@ -65,12 +66,20 @@ public class FlightController {
         System.out.println("Select departure airport ");
         airportView.showAirports(airports);
         selection = sc.nextInt();
-        flight.setDeparture(airportController.selectedAirport(airports,selection).getName());
+        Airport departureAirport = airportController.selectedAirport(airports,selection);
+        flight.setDeparture(departureAirport.getName());
+        flight.setCityOri(departureAirport.getCity().getName());
+        flight.setCountryOri(departureAirport.getCity().getCountry().getName());
+
 
         System.out.println("Select arrival airport");
         airportView.showAirports(airports);
         selection = sc.nextInt();
-        flight.setArrival(airportController.selectedAirport(airports,selection).getName());
+        Airport arrivalAirport = airportController.selectedAirport(airports,selection);
+        flight.setArrival(arrivalAirport.getName());
+        flight.setCityDest(arrivalAirport.getCity().getName());
+        flight.setCountryDest(arrivalAirport.getCity().getCountry().getName());
+
 
         System.out.println("Type departure date (dd/mm/yyyy)");
         strDate = sc.next();
@@ -132,8 +141,8 @@ public class FlightController {
                     updateOption = 5;
                     break;
                 case 4:
-                    flight.setStatus("Landed");
-                    System.out.println("Flight landed");
+                    setLanded(flight);
+                    System.out.println("Flight is landed");
                     updateOption = 5;
                     break;
                 default:
@@ -169,6 +178,13 @@ public class FlightController {
         incident = sc.next();
         flight.setIncident(incident);
 
+    }
+
+    public void setLanded(Flight flight){
+        flight.setStatus("Landed");
+        ReportUtil report = new ReportUtil();
+        System.out.println("Generating Report");
+        report.generateReport(flight);
     }
 
     public void setCancelled(Flight flight){
