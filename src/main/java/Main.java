@@ -81,13 +81,14 @@ public class Main {
         /////////////////////////////////////////////////////////////////
 
         int flightOption;
+        int selectedFlight;
         Scanner sc = new Scanner(System.in);
         do{
             System.out.println("--------Select an Option------------");
             System.out.println("1 List Flights");
             System.out.println("2 Add Flight");
             System.out.println("3 Update Flight");
-            System.out.println("3 Exit");
+            System.out.println("4 Exit");
             flightOption=sc.nextInt();
             switch (flightOption){
                 case 1:
@@ -100,8 +101,10 @@ public class Main {
                     break;
                 case 3:
                     flightController.showFlightList(flights);
-                    int flightOptio;
-
+                    System.out.println("Type the Flight number");
+                    selectedFlight=sc.nextInt();
+                    Flight selected = flightController.findFlightByNumber(selectedFlight, flights);
+                    flightController.updateFlight(selected);
                     break;
             }
         }while (flightOption != 4);

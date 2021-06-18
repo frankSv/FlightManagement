@@ -20,6 +20,7 @@ public class FlightView {
         String airline = flight.getAirline();
         String departure = flight.getDeparture();
         String arrival = flight.getArrival();
+        String incident = flight.getIncident();
 
         stringBuilder.append(number);
         stringBuilder.append(" | ");
@@ -33,11 +34,16 @@ public class FlightView {
         stringBuilder.append(" | ");
         stringBuilder.append(arriveTime);
         stringBuilder.append(" | ");
+        stringBuilder.append(incident);
+        stringBuilder.append(" | ");
+        stringBuilder.append(flight.getCancelReason());
+        stringBuilder.append(" | ");
         stringBuilder.append(aircraft.getAircraftType().getModel());
         stringBuilder.append(" | ");
         stringBuilder.append(aircraft.getAircraftType().getCapacity());
         stringBuilder.append(" | ");
         stringBuilder.append(aircraft.getAircraftType().getGasRange());
+
         String flightInfo = stringBuilder.toString();
         System.out.println(flightInfo);
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");

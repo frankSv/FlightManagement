@@ -101,18 +101,81 @@ public class FlightController {
         return myFlight;
     }
 
-    public Flight updateFlight(int number, ArrayList<Flight> flights){
-
+    public Flight updateFlight(Flight flight){
+        Scanner sc = new Scanner(System.in);
+        int updateOption;
+        System.out.println("-----------Update Options----------------");
+        System.out.println("1 Set Status as Ontime");
+        System.out.println("2 Set Status as Delayed");
+        System.out.println("3 Set Status as Cancelled");
+        System.out.println("4 Set Status as Landed");
+        System.out.println("5 Return to main Menu");
+        System.out.println("____________________________________________");
+        do{
+            updateOption = sc.nextInt();
+            switch (updateOption){
+                case 1:
+                    flight.setStatus("Ontime");
+                    System.out.println("Flight set as Ontime");
+                    updateOption = 5;
+                    break;
+                case 2:
+                    flight.setStatus("Delayed");
+                    updateDateTime(flight);
+                    System.out.println("Flight set as Delayed");
+                    updateOption = 5;
+                    break;
+                case 3:
+                    setCancelled(flight);
+                    System.out.println("Flight set as Cancelled");
+                    System.out.println(flight.getCancelReason());
+                    updateOption = 5;
+                    break;
+                case 4:
+                    flight.setStatus("Landed");
+                    System.out.println("Flight landed");
+                    updateOption = 5;
+                    break;
+                default:
+                    break;
+            }
+        }while (updateOption!=5);
         return flight;
     }
 
-    public String  setStatus(Flight flight, String status){
+    public void updateDateTime(Flight flight){
+        String strDate = "";
+        String incident = "No incident";
+        DateCapture dateCapture = new DateCapture();
         Scanner sc = new Scanner(System.in);
-        String incidentDescription;
-        System.out.println("Type the inident: ");
-        incidentDescription = sc.nextLine();
-        flight.setStatus(status);
-        return incidentDescription;
+
+        System.out.println("Type departure date (dd/mm/yyyy)");
+        strDate = sc.next();
+        flight.setDepartureDate(dateCapture.dateCapturer(strDate));
+
+        System.out.println("Type arrival date (dd/mm/yyyy)");
+        strDate = sc.next();
+        flight.setArriveDate(dateCapture.dateCapturer(strDate));
+
+        System.out.println("Type departure time (HH:mm)");
+        strDate = sc.next();
+        flight.setDepartureTime(dateCapture.timeCapturer(strDate));
+
+        System.out.println("Type arrival time (HH:mm)");
+        strDate = sc.next();
+        flight.setArriveTime(dateCapture.timeCapturer(strDate));
+
+        System.out.println("Type the Incident if exist");
+        incident = sc.next();
+        flight.setIncident(incident);
+
+    }
+
+    public void setCancelled(Flight flight){
+        flight.setStatus("Cancelled");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Type the Cancellation Reason");
+        flight.setCancelReason(sc.nextLine());
     }
 
     public void showFlightView(Flight flight){

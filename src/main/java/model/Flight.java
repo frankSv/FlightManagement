@@ -20,4 +20,6 @@ public class Flight {
     private String airline;
     private String departure;
     private String arrival;
+    private String incident = "No incident";
+    private String cancelReason = " ";
 }
