@@ -176,7 +176,6 @@ public class FlightController {
         System.out.println("Type the Incident if exist");
         incident = sc.next();
         flight.setIncident(incident);
-
     }
 
     public void setLanded(Flight flight){
@@ -191,6 +190,16 @@ public class FlightController {
         Scanner sc = new Scanner(System.in);
         System.out.println("Type the Cancellation Reason");
         flight.setCancelReason(sc.nextLine());
+    }
+
+    public void generateFlightReport(Flight flight){
+        ReportUtil reportUtil = new ReportUtil();
+        reportUtil.generateReport(flight);
+    }
+
+    public void generateDateReport(ArrayList<Flight> flights){
+        ReportUtil reportUtil = new ReportUtil();
+        reportUtil.generateDateReport(flights);
     }
 
     public void showFlightView(Flight flight){

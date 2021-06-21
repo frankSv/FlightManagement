@@ -21,7 +21,6 @@ public class AirportController {
                 selected = airport;
             }
         }
-
         return selected;
     }
 
@@ -33,16 +32,15 @@ public class AirportController {
     public void generateAirportReport(ArrayList<Flight> flights, ArrayList<Airport> airports){
         Scanner sc = new Scanner(System.in);
         int selection;
-        ArrayList<Flight> myAirportFlights= new ArrayList<>();
-        Airport airport = new Airport();
+        ArrayList<Flight> myAirportFlights;
+        Airport airport;
         ReportUtil reportUtil = new ReportUtil();
         System.out.println("Select the Airport");
         showAirports(airports);
         selection = sc.nextInt();
         airport = selectedAirport(airports,selection);
         myAirportFlights = airportFlights(flights,airport);
-        reportUtil.generateAirportReport(airport,myAirportFlights);
-
+        //reportUtil.generateAirportReport(airport,myAirportFlights);
     }
 
     public ArrayList<Flight> airportFlights(ArrayList<Flight> flights, Airport airport){

@@ -69,11 +69,13 @@ public class ReportUtil {
         file.close();
         workbook.close();
         System.out.println("File Created");
+        EmailUtils emailUtils = new EmailUtils();
+        emailUtils.sendReport(flightReportName);
     }
 
     @SneakyThrows
-    public void generateAirportReport(Airport airport, ArrayList<Flight> flights){
-        String airportReportName = airport.getName() + " report.xlsx";
+    public void generateDateReport(ArrayList<Flight> flights){
+        String airportReportName = "Date" + " report.xlsx";
         Weather weather = new Weather();
 
         String[] header = new String[]{"Number",

@@ -1,27 +1,32 @@
 package utils;
 
-import lombok.SneakyThrows;
-import model.DateFlight;
-
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateCapture {
+public class DateCapture implements DateCaptureInterface{
 
-    @SneakyThrows
+    @Override
     public Date dateCapturer(String strData){
-        SimpleDateFormat format = new SimpleDateFormat("dd/mm/yyyy");
-        Date date = format.parse(strData);
+        var format = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = null;
+        try {
+            date = format.parse(strData);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         return date;
     }
 
-    @SneakyThrows
+    @Override
     public Date timeCapturer(String strTime){
-        SimpleDateFormat format = new SimpleDateFormat("hh:mm");
-        Date time = format.parse(strTime);
+        var format = new SimpleDateFormat("hh:mm");
+        Date time = null;
+        try {
+            time = format.parse(strTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         return time;
     }
-
-
-
 }

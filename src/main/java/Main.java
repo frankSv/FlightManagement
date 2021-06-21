@@ -3,8 +3,8 @@ import controller.FlightController;
 import model.*;
 import utils.BasicData;
 import utils.FileImporter;
+import utils.FlightSelector;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -21,7 +21,8 @@ public class Main {
         BasicData basicData = new BasicData();
         AirportController airportController = new AirportController();
         FlightController flightController = new FlightController();
-        SimpleDateFormat formatter1 = new SimpleDateFormat("dd/MM/yyyy");
+
+        //SimpleDateFormat formatter1 = new SimpleDateFormat("dd/MM/yyyy");
 
         Date date = new Date();
 
@@ -96,13 +97,14 @@ public class Main {
             System.out.println("1 List Flights");
             System.out.println("2 Add Flight");
             System.out.println("3 Add from File");
-            System.out.println("3 Update Flight");
-            System.out.println("4 Generate Airport Report");
-            System.out.println("5 Exit");
+            System.out.println("4 Update Flight");
+            System.out.println("5 Generate report by date");
+            System.out.println("6 Generate Flight Report");
+            System.out.println("7 Exit");
+            System.out.println("-------------------------------------");
             flightOption=sc.nextInt();
             switch (flightOption){
                 case 1:
-                    System.out.println("Flights list");
                     flightController.showFlightList(flights);
                     break;
                 case 2:
@@ -113,6 +115,7 @@ public class Main {
                     System.out.println("Adding fro file");
                     FileImporter fileImporter = new FileImporter();
                     flights.addAll(fileImporter.importFromFile(aircrafts));
+                    break;
                 case 4:
                     flightController.showFlightList(flights);
                     System.out.println("Type the Flight number");
@@ -121,19 +124,26 @@ public class Main {
                     flightController.updateFlight(selected);
                     break;
                 case 5:
-                    airportController.generateAirportReport(flights,airports);
-                    System.out.println("Generating Airport Report");
+                    flightController.showFlightList(flights);
+                    System.out.println("Type date in format(dd/mm/yy)");
+                    String strDate = sc.next();
+                    FlightSelector flightSelector = new FlightSelector();
+                    flightController.generateDateReport(flightSelector.findFlightByDate(flights, strDate));
+                    break;
+                case 6:
+                    flightController.showFlightList(flights);
+                    System.out.println("Type the Flight number");
+                    selectedFlight=sc.nextInt();
+                    Flight reportFlight = flightController.findFlightByNumber(selectedFlight, flights);
+                    flightController.generateFlightReport(reportFlight);
+
+                default:
+                    break;
             }
-        }while (flightOption != 6);
+        }while (flightOption != 7);
     }
 
     public static void main(String[] args) {
         menu();
-
-
     }
-
-
-
-
 }

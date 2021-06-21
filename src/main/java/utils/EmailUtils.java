@@ -36,6 +36,7 @@ public class EmailUtils {
         multipart.addBodyPart(attachment);
         message.setContent(multipart);
         Transport.send(message);
+        System.out.println("Report Sended");
 
     }
 

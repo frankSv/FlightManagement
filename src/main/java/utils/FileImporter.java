@@ -77,6 +77,7 @@ public class FileImporter {
                 }////////////////////////////////////////////////
                 if(i==6){
                     int airCraftId = (int) cell.getNumericCellValue();
+
                     flight.setAircraft(aircraftController.selectedAircraft(aircrafts,airCraftId));
                 }////////////////////////////////////////////////
                 if(i==7){

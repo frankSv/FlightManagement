@@ -10,6 +10,7 @@ public class AircraftController {
         for(Aircraft aircraft: aircrafts){
             if(aircraft.getId() == selection){
                 selected = aircraft;
+                return selected;
             }
         }
         return selected;
