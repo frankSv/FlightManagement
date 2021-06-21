@@ -1,5 +1,31 @@
 package utils;
 
-public class WeatherData {
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+
+public class WeatherData implements WeatherDataInterface{
+
+    @Override
+    public void getWeatherData() {
+        JSONParser jsonParser = new JSONParser();
+
+            //Parsing the contents of the JSON file
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = (JSONObject) jsonParser.parse(new FileReader("weather.json"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+            String temp = (String) jsonObject.get("Temperature");
+            String speed = (String) jsonObject.get("Wind Speed");
+            String visibility = (String) jsonObject.get("Visibility");
+
+    }
 }

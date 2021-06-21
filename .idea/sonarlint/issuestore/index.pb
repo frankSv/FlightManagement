@@ -19,5 +19,3 @@ S
 #src/main/java/view/AirportView.java,9/9/99ce330dc14f2fff6fdf703167982be7d7ea6a5d
 T
 $src/main/java/view/AircraftView.java,a/c/ac66e408d3010dde45576c95f018089ce78e74de
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec

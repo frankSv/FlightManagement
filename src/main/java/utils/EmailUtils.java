@@ -39,6 +39,4 @@ public class EmailUtils {
         System.out.println("Report Sended");
 
     }
-
-
 }
