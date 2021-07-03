@@ -9,6 +9,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void menu(){
+
+        /*
+        Poner main en paquete
+        Crear Clase menu
+        No sobrecargar  Main
+        No crear variables para llenado de datos base
+        Agregar mas comentarios
+        Add try and catch
+        */
         /////////////////////////////////////////////////////////////////
         ArrayList<Flight> flights = new ArrayList<>();
         ArrayList<AircraftType> aircraftTypes = new ArrayList<>();
@@ -22,7 +31,6 @@ public class Main {
         //SimpleDateFormat formatter1 = new SimpleDateFormat("dd/MM/yyyy");
 
         Date date = new Date();
-
 
         Country country1 = basicData.countryCreation(1,"El Salvador");
         Country country2 = basicData.countryCreation(2,"Germany");
@@ -52,7 +60,6 @@ public class Main {
         airports.add(airport1);
         airports.add(airport2);
 
-
         Flight flight1 = flightController.createFlight(14767);
         flight1.setStatus("Ontime");
         flight1.setAirline(airline1.getName());
@@ -67,7 +74,6 @@ public class Main {
         flight1.setCityDest(airport2.getCity().getName());
         flight1.setCountryOri(airport1.getCity().getCountry().getName());
         flight1.setCountryDest(airport2.getCity().getCountry().getName());
-
 
         Flight flight2 = flightController.createFlight(25679);
         flight2.setStatus("Ontime");
@@ -135,7 +141,6 @@ public class Main {
                     selectedFlight=sc.nextInt();
                     Flight reportFlight = flightController.findFlightByNumber(selectedFlight, flights);
                     flightController.generateFlightReport(reportFlight);
-
                 default:
                     break;
             }

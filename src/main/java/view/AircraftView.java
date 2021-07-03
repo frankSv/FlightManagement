@@ -9,6 +9,5 @@ public class AircraftView {
         for (Aircraft aircraft: aircraftList){
             System.out.println(aircraft.getId() + " for: " +aircraft.getAircraftType().getModel());
         }
-
     }
 }

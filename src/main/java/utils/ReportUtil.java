@@ -17,7 +17,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-
+//Reuse code
+//Add comments
 public class ReportUtil {
     @SneakyThrows
     public void generateReport(Flight flight){

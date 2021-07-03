@@ -22,6 +22,9 @@ import java.util.Scanner;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
+//Create a global or private flight
+
 public class FlightController {
     private Flight flight;
     private FlightView flightView = new FlightView();
@@ -32,8 +35,9 @@ public class FlightController {
         return flight;
     }
 
+
     public Flight createFlightManually(ArrayList<Aircraft> aircrafts, ArrayList<Airport> airports, ArrayList<Airline> airlines){
-        Flight flight = new Flight();
+        Flight flight = new Flight();//Create a global or private flight
         int selection;
         String strDate = "";
         DateCapture dateCapture = new DateCapture();
@@ -44,7 +48,7 @@ public class FlightController {
         AirportController airportController = new AirportController();
         AirlineController airlineController = new AirlineController();
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);//Create a public scann
 
         System.out.println("Type the Flight number");
         flight.setNumber(sc.nextInt());
@@ -79,7 +83,6 @@ public class FlightController {
         flight.setCityDest(arrivalAirport.getCity().getName());
         flight.setCountryDest(arrivalAirport.getCity().getCountry().getName());
 
-
         System.out.println("Type departure date (dd/mm/yyyy)");
         strDate = sc.next();
         flight.setDepartureDate(dateCapture.dateCapturer(strDate));
@@ -98,6 +101,8 @@ public class FlightController {
 
         return flight;
     }
+
+
 
     public Flight findFlightByNumber(int number, ArrayList<Flight> flights){
         Flight myFlight = new Flight();

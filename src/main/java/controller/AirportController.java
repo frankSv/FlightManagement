@@ -29,6 +29,8 @@ public class AirportController {
         airportView.showAirports(airports);
     }
 
+    ///////////////////////////////
+//Eliminate unused methods
     public void generateAirportReport(ArrayList<Flight> flights, ArrayList<Airport> airports){
         Scanner sc = new Scanner(System.in);
         int selection;

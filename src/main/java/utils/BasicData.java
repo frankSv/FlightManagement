@@ -5,7 +5,6 @@ import model.*;
 
 public class BasicData implements BasicDataInterface{
 
-
     @Override
     public Country countryCreation(int id, String name){
         return new Country(id, name);
