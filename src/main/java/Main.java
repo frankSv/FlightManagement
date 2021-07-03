@@ -1,9 +1,7 @@
 import controller.AirportController;
 import controller.FlightController;
 import model.*;
-import utils.BasicData;
-import utils.FileImporter;
-import utils.FlightSelector;
+import utils.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,7 +10,6 @@ import java.util.Scanner;
 public class Main {
     public static void menu(){
         /////////////////////////////////////////////////////////////////
-
         ArrayList<Flight> flights = new ArrayList<>();
         ArrayList<AircraftType> aircraftTypes = new ArrayList<>();
         ArrayList<Airport> airports = new ArrayList<>();
@@ -25,6 +22,7 @@ public class Main {
         //SimpleDateFormat formatter1 = new SimpleDateFormat("dd/MM/yyyy");
 
         Date date = new Date();
+
 
         Country country1 = basicData.countryCreation(1,"El Salvador");
         Country country2 = basicData.countryCreation(2,"Germany");
@@ -128,7 +126,8 @@ public class Main {
                     System.out.println("Type date in format(dd/mm/yy)");
                     String strDate = sc.next();
                     FlightSelector flightSelector = new FlightSelector();
-                    flightController.generateDateReport(flightSelector.findFlightByDate(flights, strDate));
+                    ArrayList<Flight> myFlights = flightSelector.findFlightByDate(flights,strDate);
+                    flightController.generateDateReport(myFlights);
                     break;
                 case 6:
                     flightController.showFlightList(flights);

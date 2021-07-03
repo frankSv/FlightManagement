@@ -31,7 +31,7 @@ public class EmailUtils {
         MimeBodyPart attachment =  new MimeBodyPart();
         attachment.attachFile(new File(attName));
         MimeBodyPart messageBodyPart = new MimeBodyPart();
-        messageBodyPart.setContent("<h1>Subject 1 Report</h1>","text/html");
+        messageBodyPart.setContent("<h1>Flight Report Report</h1>","text/html");
         multipart.addBodyPart(messageBodyPart);
         multipart.addBodyPart(attachment);
         message.setContent(multipart);

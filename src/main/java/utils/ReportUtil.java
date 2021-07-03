@@ -55,6 +55,8 @@ public class ReportUtil {
         row.createCell(8).setCellValue(flight.getCountryOri());
         row.createCell(9).setCellValue(flight.getCountryDest());
 
+        row.createCell(10).setCellValue("");
+
         for (int i = 0; i<header.length;i++) {
             sheet.autoSizeColumn(i);
         }
@@ -76,7 +78,6 @@ public class ReportUtil {
     @SneakyThrows
     public void generateDateReport(ArrayList<Flight> flights){
         String airportReportName = "Date" + " report.xlsx";
-        Weather weather = new Weather();
 
         String[] header = new String[]{"Number",
                 "Status",

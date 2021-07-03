@@ -1,6 +1,4 @@
 
-M
-src/main/java/model/City.java,f/9/f9ce9be3ba08fdb329fe288afce5119ba76a7b8d
 P
  src/main/java/model/Country.java,9/7/9793defed2d41cd60517aae98fcecd58035db3b9
 S
@@ -8,14 +6,36 @@ S
 S
 #src/main/java/model/TimeFlight.java,7/c/7cbb7ad3a5a13557e15ebfdf33a23c9cc45c03ef
 P
- src/main/java/model/Airport.java,b/b/bb3822fd832c2318426455cf18f4cbb114a31cd5
-P
  src/main/java/model/Airline.java,3/c/3ce4eb4a5904a027f71a56f3d552fb4752adacd4
-S
-#src/main/java/view/AirlineView.java,4/5/45a7e192c16c2bc39a180700ca18b83e51de4cf9
+_
+/src/main/java/controller/AirlineController.java,a/8/a8398c93fde65963a37d04546db61b72546cc4f3
+_
+/src/main/java/controller/AirportController.java,6/f/6fd106770e35bb0208d043c11c6ef5b4228068a3
+X
+(src/main/java/utils/AirportSelector.java,7/0/70c7c05cc53276d33e5a44fbd2070d4737ed2353
+a
+1src/main/java/utils/AirportSelectorInterface.java,b/3/b3f0a67219d3c958c8a12bf7fb3041ee08069b24
+R
+"src/main/java/utils/BasicData.java,a/f/af25a0fa5d5abafec29c78ddfab8cf15efac0351
+[
++src/main/java/utils/BasicDataInterface.java,5/5/5568a0bd1e087f77e24330802a887e97c1cfb2d7
+T
+$src/main/java/utils/DateCapture.java,0/f/0fb11d4efd335ce4adeba2f4e7dbf514c84b909f
+]
+-src/main/java/utils/DateCaptureInterface.java,a/6/a6ee9d3ca26018cc789141d2bdf8ecacccd64db3
+U
+%src/main/java/utils/FileImporter.java,1/d/1daaa9ae0b3cae863df855e138c85eeebfe4ac6c
+X
+(src/main/java/utils/MailPropperties.java,2/b/2bac7adfc5dee7eacffa23a4d2a3a136288b7241
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+O
+src/main/java/model/Flight.java,1/0/10907b2fba2a3bb1c7b71bdd21f19b7dfdca6a55
+M
+src/main/java/model/City.java,f/9/f9ce9be3ba08fdb329fe288afce5119ba76a7b8d
+Q
+!src/main/java/model/Aircraft.java,3/4/34eb9c9801e2a2019961b0a19ce171501bf95028
 U
 %src/main/java/model/AircraftType.java,9/3/931868038b262e0dce53e5acd464879096307009
-S
-#src/main/java/view/AirportView.java,9/9/99ce330dc14f2fff6fdf703167982be7d7ea6a5d
-T
-$src/main/java/view/AircraftView.java,a/c/ac66e408d3010dde45576c95f018089ce78e74de
+P
+ src/main/java/model/Airport.java,b/b/bb3822fd832c2318426455cf18f4cbb114a31cd5

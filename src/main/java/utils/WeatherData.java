@@ -11,7 +11,7 @@ import java.util.HashMap;
 public class WeatherData implements WeatherDataInterface{
 
     @Override
-    public void getWeatherData() {
+    public Weather getWeatherData() {
         JSONParser jsonParser = new JSONParser();
 
             //Parsing the contents of the JSON file
@@ -27,5 +27,8 @@ public class WeatherData implements WeatherDataInterface{
             String speed = (String) jsonObject.get("Wind Speed");
             String visibility = (String) jsonObject.get("Visibility");
 
+            Weather weather = new Weather(temp,speed,visibility);
+
+        return weather;
     }
 }
