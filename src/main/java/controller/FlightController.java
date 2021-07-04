@@ -6,6 +6,7 @@ import model.Airline;
 import model.Airport;
 import model.Flight;
 import utils.DateCapture;
+import utils.Menu;
 import utils.ReportUtil;
 import view.AircraftView;
 import view.AirlineView;
@@ -71,8 +72,8 @@ public class FlightController {
         selection = sc.nextInt();
         Airport departureAirport = airportController.selectedAirport(airports,selection);
         flight.setDeparture(departureAirport.getName());
-        flight.setCityOri(departureAirport.getCity().getName());
-        flight.setCountryOri(departureAirport.getCity().getCountry().getName());
+        flight.setCityOri(departureAirport.getCity());
+        flight.setCountryOri(departureAirport.getCountry());
 
 
         System.out.println("Select arrival airport");
@@ -80,8 +81,8 @@ public class FlightController {
         selection = sc.nextInt();
         Airport arrivalAirport = airportController.selectedAirport(airports,selection);
         flight.setArrival(arrivalAirport.getName());
-        flight.setCityDest(arrivalAirport.getCity().getName());
-        flight.setCountryDest(arrivalAirport.getCity().getCountry().getName());
+        flight.setCityDest(arrivalAirport.getCity());
+        flight.setCountryDest(arrivalAirport.getCountry());
 
         System.out.println("Type departure date (dd/mm/yyyy)");
         strDate = sc.next();
@@ -117,13 +118,7 @@ public class FlightController {
     public Flight updateFlight(Flight flight){
         Scanner sc = new Scanner(System.in);
         int updateOption;
-        System.out.println("-----------Update Options----------------");
-        System.out.println("1 Set Status as Ontime");
-        System.out.println("2 Set Status as Delayed");
-        System.out.println("3 Set Status as Cancelled");
-        System.out.println("4 Set Status as Landed");
-        System.out.println("5 Return to main Menu");
-        System.out.println("____________________________________________");
+        Menu.createManuallyMenu();
         do{
             updateOption = sc.nextInt();
             switch (updateOption){

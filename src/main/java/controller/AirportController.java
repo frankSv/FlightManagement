@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 
 public class AirportController {
-    public Airport createAirport(int id, String name, City city, ArrayList<AircraftType> types){
-        return new Airport(id,name,city,types);
+    public Airport createAirport(int id, String name, String city, String country, ArrayList<AircraftType> types){
+        return new Airport(id,name,city, country,types);
     }
 
     public Airport selectedAirport(ArrayList<Airport> airports, int selection){
