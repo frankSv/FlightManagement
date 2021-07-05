@@ -20,7 +20,6 @@ public class BaseDataCreation {
         return aircraftTypes;
     }
 
-
     public static ArrayList<Airport> createAirportList(){
         ArrayList<Airport> airports = new ArrayList<>();
         ArrayList<AircraftType> aircraftTypes= createTypes();

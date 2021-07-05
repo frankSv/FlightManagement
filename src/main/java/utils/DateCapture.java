@@ -1,5 +1,6 @@
 package utils;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,4 +30,13 @@ public class DateCapture implements DateCaptureInterface{
         }
         return time;
     }
+
+    @Override
+    public String dateToString(Date date) {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String strDate = dateFormat.format(date);
+        return strDate;
+    }
+
+
 }

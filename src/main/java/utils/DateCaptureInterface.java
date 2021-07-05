@@ -4,5 +4,6 @@ import java.util.Date;
 
 public interface DateCaptureInterface {
     Date dateCapturer(String strData);
-     Date timeCapturer(String strTime);
+    Date timeCapturer(String strTime);
+    String dateToString(Date date);
 }

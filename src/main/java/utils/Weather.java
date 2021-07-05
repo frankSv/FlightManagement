@@ -12,3 +12,4 @@ public class Weather {
     private String windSpeed;
     private String cloudy;
 }
+

@@ -14,8 +14,8 @@ public class Menu {
         System.out.println("-------------------------------------");
     }
 
-    public static void createManuallyMenu(){
-        System.out.println("-----------Update Options----------------");
+    public static void setStatus(){
+        System.out.println("-----------Status Options----------------");
         System.out.println("1 Set Status as Ontime");
         System.out.println("2 Set Status as Delayed");
         System.out.println("3 Set Status as Cancelled");

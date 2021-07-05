@@ -1,14 +1,8 @@
 package controller;
 
 import model.*;
-import utils.EmailUtils;
-import utils.ReportUtil;
 import view.AirportView;
-
 import java.util.ArrayList;
-import java.util.Scanner;
-
-
 public class AirportController {
     public Airport createAirport(int id, String name, String city, String country, ArrayList<AircraftType> types){
         return new Airport(id,name,city, country,types);
@@ -27,32 +21,6 @@ public class AirportController {
     public void showAirports(ArrayList<Airport> airports){
         AirportView airportView = new AirportView();
         airportView.showAirports(airports);
-    }
-
-    ///////////////////////////////
-//Eliminate unused methods
-    public void generateAirportReport(ArrayList<Flight> flights, ArrayList<Airport> airports){
-        Scanner sc = new Scanner(System.in);
-        int selection;
-        ArrayList<Flight> myAirportFlights;
-        Airport airport;
-        ReportUtil reportUtil = new ReportUtil();
-        System.out.println("Select the Airport");
-        showAirports(airports);
-        selection = sc.nextInt();
-        airport = selectedAirport(airports,selection);
-        myAirportFlights = airportFlights(flights,airport);
-        //reportUtil.generateAirportReport(airport,myAirportFlights);
-    }
-
-    public ArrayList<Flight> airportFlights(ArrayList<Flight> flights, Airport airport){
-        ArrayList<Flight>myFlights = new ArrayList<>();
-        for (Flight flight:flights){
-            if(flight.getDeparture()==airport.getName()||flight.getArrival()==airport.getName()){
-                myFlights.add(flight);
-            }
-        }
-        return myFlights;
     }
 
 }

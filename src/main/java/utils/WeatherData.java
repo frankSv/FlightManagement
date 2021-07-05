@@ -6,7 +6,6 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
 
 public class WeatherData implements WeatherDataInterface{
 
@@ -14,7 +13,6 @@ public class WeatherData implements WeatherDataInterface{
     public Weather getWeatherData() {
         JSONParser jsonParser = new JSONParser();
 
-            //Parsing the contents of the JSON file
         JSONObject jsonObject = null;
         try {
             jsonObject = (JSONObject) jsonParser.parse(new FileReader("weather.json"));
@@ -26,9 +24,7 @@ public class WeatherData implements WeatherDataInterface{
             String temp = (String) jsonObject.get("Temperature");
             String speed = (String) jsonObject.get("Wind Speed");
             String visibility = (String) jsonObject.get("Visibility");
-
             Weather weather = new Weather(temp,speed,visibility);
-
         return weather;
     }
 }

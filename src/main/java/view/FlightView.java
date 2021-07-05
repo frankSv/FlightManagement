@@ -2,7 +2,6 @@ package view;
 
 import model.Aircraft;
 import model.Flight;
-import utils.Weather;
 import utils.WeatherData;
 
 import java.util.ArrayList;
@@ -12,7 +11,6 @@ public class FlightView {
     public void showFlight(Flight flight){
         StringBuilder stringBuilder = new StringBuilder();
         WeatherData weatherData = new WeatherData();
-        StringBuilder weatherString = new StringBuilder();
 
         int number = flight.getNumber();
         String status = flight.getStatus();
@@ -48,6 +46,12 @@ public class FlightView {
         stringBuilder.append(" | ");
         stringBuilder.append(aircraft.getAircraftType().getGasRange());
         stringBuilder.append("|");
+        stringBuilder.append(weatherData.getWeatherData().getTemperture()+"°C");
+        stringBuilder.append("|");
+        stringBuilder.append(weatherData.getWeatherData().getWindSpeed()+"km/h");
+        stringBuilder.append("|");
+        stringBuilder.append(weatherData.getWeatherData().getCloudy());
+
         String flightInfo = stringBuilder.toString();
         System.out.println(flightInfo);
 

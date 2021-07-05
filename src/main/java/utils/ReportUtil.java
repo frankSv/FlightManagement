@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class ReportUtil {
 
     @SneakyThrows
-    public void generateReport(Flight flight){
+    public static void generateReport(Flight flight){
         String flightReportName = "Flight " + flight.getNumber() + "report.xlsx";
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet();
@@ -32,7 +32,7 @@ public class ReportUtil {
     }
 
     @SneakyThrows
-    public void generateDateReport(ArrayList<Flight> flights){
+    public static void generateDateReport(ArrayList<Flight> flights){
         String flightReportName = "Flights report.xlsx";
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet();

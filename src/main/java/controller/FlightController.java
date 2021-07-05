@@ -38,7 +38,7 @@ public class FlightController {
 
 
     public Flight createFlightManually(ArrayList<Aircraft> aircrafts, ArrayList<Airport> airports, ArrayList<Airline> airlines){
-        Flight flight = new Flight();//Create a global or private flight
+        Flight flight = new Flight();
         int selection;
         String strDate = "";
         DateCapture dateCapture = new DateCapture();
@@ -68,7 +68,7 @@ public class FlightController {
         flight.setAirline(airlineController.selectedAirline(airlines,selection).getName());
 
         System.out.println("Select departure airport ");
-        airportView.showAirports(airports);
+        airportController.showAirports(airports);
         selection = sc.nextInt();
         Airport departureAirport = airportController.selectedAirport(airports,selection);
         flight.setDeparture(departureAirport.getName());
@@ -76,7 +76,7 @@ public class FlightController {
         flight.setCountryOri(departureAirport.getCountry());
 
         System.out.println("Select arrival airport");
-        airportView.showAirports(airports);
+        airportController.showAirports(airports);
         selection = sc.nextInt();
         Airport arrivalAirport = airportController.selectedAirport(airports,selection);
         flight.setArrival(arrivalAirport.getName());
@@ -115,7 +115,7 @@ public class FlightController {
     public Flight updateFlight(Flight flight){
         Scanner sc = new Scanner(System.in);
         int updateOption;
-        Menu.createManuallyMenu();
+        Menu.setStatus();
         do{
             updateOption = sc.nextInt();
             switch (updateOption){
@@ -190,13 +190,11 @@ public class FlightController {
     }
 
     public void generateFlightReport(Flight flight){
-        ReportUtil reportUtil = new ReportUtil();
-        reportUtil.generateReport(flight);
+        ReportUtil.generateReport(flight);
     }
 
     public void generateDateReport(ArrayList<Flight> flights){
-        ReportUtil reportUtil = new ReportUtil();
-        reportUtil.generateDateReport(flights);
+        ReportUtil.generateDateReport(flights);
     }
 
     public void showFlightView(Flight flight){
