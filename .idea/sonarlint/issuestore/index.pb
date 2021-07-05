@@ -41,13 +41,21 @@ T
 $src/main/java/utils/WeatherData.java,7/7/7748c300cf18eb8be5ea826100a9f4a55d86db8a
 P
  src/main/java/utils/Weather.java,7/b/7b36c5e62a57cc0f3fa8abde5f60cd1d79a375d7
-S
-#src/main/java/utils/EmailUtils.java,7/4/742418065b21a361e1802fbe9e4bec41d252bf53
 U
 %src/main/java/utils/FileImporter.java,1/d/1daaa9ae0b3cae863df855e138c85eeebfe4ac6c
-X
-(src/main/java/utils/MailPropperties.java,2/b/2bac7adfc5dee7eacffa23a4d2a3a136288b7241
 T
 $src/main/java/view/AircraftView.java,a/c/ac66e408d3010dde45576c95f018089ce78e74de
 _
 /src/main/java/controller/AirlineController.java,a/8/a8398c93fde65963a37d04546db61b72546cc4f3
+M
+src/main/java/model/City.java,f/9/f9ce9be3ba08fdb329fe288afce5119ba76a7b8d
+R
+"src/main/java/utils/BasicData.java,a/f/af25a0fa5d5abafec29c78ddfab8cf15efac0351
+_
+/src/main/java/controller/AirportController.java,6/f/6fd106770e35bb0208d043c11c6ef5b4228068a3
+`
+0src/main/java/controller/AircraftController.java,c/0/c021a0316a1ccc3334c6733fcc3372b227296891
+P
+ src/main/java/model/Airport.java,b/b/bb3822fd832c2318426455cf18f4cbb114a31cd5
+O
+src/main/java/model/Flight.java,1/0/10907b2fba2a3bb1c7b71bdd21f19b7dfdca6a55

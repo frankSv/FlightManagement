@@ -54,8 +54,8 @@ public class FlightController {
         System.out.println("Type the Flight number");
         flight.setNumber(sc.nextInt());
 
-        System.out.println("Set Status, type Ontime, Cancelled, Fliying, Delayed or Landed");
-        flight.setStatus(sc.next());
+        Flight tempFlight = updateFlight(flight);//Usig update status method
+        flight = tempFlight;
 
         System.out.println("Select an aircraft to add");
         aircraftView.showAircraft(aircrafts);
@@ -74,7 +74,6 @@ public class FlightController {
         flight.setDeparture(departureAirport.getName());
         flight.setCityOri(departureAirport.getCity());
         flight.setCountryOri(departureAirport.getCountry());
-
 
         System.out.println("Select arrival airport");
         airportView.showAirports(airports);
@@ -102,8 +101,6 @@ public class FlightController {
 
         return flight;
     }
-
-
 
     public Flight findFlightByNumber(int number, ArrayList<Flight> flights){
         Flight myFlight = new Flight();

@@ -110,7 +110,7 @@ public class BaseDataCreation {
             flightOption=sc.nextInt();
             switch (flightOption){
                 case 1:
-                    flightController.showFlightList(createFlightList());
+                    flightController.showFlightList(flights);
                     break;
                 case 2:
                     Flight flight = flightController.createFlightManually(aircrafts,airports,airlines);

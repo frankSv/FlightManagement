@@ -20,7 +20,6 @@ public class Menu {
         System.out.println("2 Set Status as Delayed");
         System.out.println("3 Set Status as Cancelled");
         System.out.println("4 Set Status as Landed");
-        System.out.println("5 Return to main Menu");
         System.out.println("____________________________________________");
     }
 }
