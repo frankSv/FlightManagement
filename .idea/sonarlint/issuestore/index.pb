@@ -17,8 +17,6 @@ P
  src/main/java/model/Airline.java,3/c/3ce4eb4a5904a027f71a56f3d552fb4752adacd4
 S
 #src/main/java/view/AirlineView.java,4/5/45a7e192c16c2bc39a180700ca18b83e51de4cf9
-[
-+src/main/java/utils/BasicDataInterface.java,5/5/5568a0bd1e087f77e24330802a887e97c1cfb2d7
 ]
 -src/main/java/utils/WeatherDataInterface.java,1/9/1906112b2d1b80bbafbacafe17d70ff9ed9c4e9a
 T

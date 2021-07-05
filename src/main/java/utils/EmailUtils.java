@@ -15,14 +15,7 @@ public class EmailUtils {
     @SneakyThrows
     public static void sendReport(String attName){
         MailPropperties mailPropperties = new MailPropperties();
-        Properties properties = mailPropperties.mailPropertiesSet();
-
-        Session session = Session.getInstance(properties, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("kodigo.projects@gmail.com","Fiaues2011**");
-            }
-        });
+        Session session = mailPropperties.createSession();
         Message message = new MimeMessage(session);
         message.setSubject("Report");
         Address addressTo = new InternetAddress("kodigo.projects@gmail.com");
@@ -37,6 +30,5 @@ public class EmailUtils {
         message.setContent(multipart);
         Transport.send(message);
         System.out.println("Report Sended");
-
     }
 }
