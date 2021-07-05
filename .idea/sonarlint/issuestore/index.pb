@@ -1,8 +1,6 @@
 
 a
 1src/main/java/utils/AirportSelectorInterface.java,b/3/b3f0a67219d3c958c8a12bf7fb3041ee08069b24
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 `
 0src/main/java/utils/FlightSelectorInterface.java,5/2/52d85ffeb66e5edd0cbb02038138218532a31b03
 Q
@@ -21,8 +19,6 @@ S
 #src/main/java/view/AirlineView.java,4/5/45a7e192c16c2bc39a180700ca18b83e51de4cf9
 [
 +src/main/java/utils/BasicDataInterface.java,5/5/5568a0bd1e087f77e24330802a887e97c1cfb2d7
-X
-(src/main/java/utils/AirportSelector.java,7/0/70c7c05cc53276d33e5a44fbd2070d4737ed2353
 ]
 -src/main/java/utils/WeatherDataInterface.java,1/9/1906112b2d1b80bbafbacafe17d70ff9ed9c4e9a
 T
