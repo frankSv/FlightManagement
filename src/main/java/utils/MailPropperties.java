@@ -3,6 +3,7 @@ package utils;
 import java.util.Properties;
 
 public class MailPropperties {
+
     Properties mailPropertiesSet(){
         Properties properties = new Properties();
         properties.put("mail.smtp.auth",true);

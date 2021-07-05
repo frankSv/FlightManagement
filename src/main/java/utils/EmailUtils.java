@@ -13,7 +13,7 @@ import java.util.Properties;
 public class EmailUtils {
 
     @SneakyThrows
-    public void sendReport(String attName){
+    public static void sendReport(String attName){
         MailPropperties mailPropperties = new MailPropperties();
         Properties properties = mailPropperties.mailPropertiesSet();
 
